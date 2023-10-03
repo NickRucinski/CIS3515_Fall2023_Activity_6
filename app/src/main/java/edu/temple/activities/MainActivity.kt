@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+const val FONTSIZE = "fontSize"
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             // TODO Step2: Implement lambda body to launch new activity and pass value
             val intent = Intent(context, DisplayActivity::class.java)
             adapter = TextSizeAdapter(textSizes){ font: Int ->
-                intent.putExtra("fontSize", font.toFloat())
+                intent.putExtra(FONTSIZE, font.toFloat())
                 startActivity(intent)
             }
             layoutManager = LinearLayoutManager(this@MainActivity)
